@@ -1,0 +1,153 @@
+/* 
+   Marketing TV Dashboard - Real McKinsey Style Upgrade
+*/
+
+:root {
+    --bg-color: #f8fafc;
+    --surface-color: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --sidebar-bg: #0b1120;
+    --sidebar-text: #f8fafc;
+    --border-color: #e2e8f0;
+    
+    /* Brand Colors Adjusted for Premium contrast */
+    --ara-color: #be123c;     /* Deep Red */
+    --d1-color: #ca8a04;      /* Deep Gold/Yellow */
+    --oli-color: #1d4ed8;     /* Deep Blue */
+    
+    /* Mixins */
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --radius: 4px; /* Flatter UI characteristic of consulting firms */
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body { background-color: var(--bg-color); color: var(--text-primary); -webkit-font-smoothing: antialiased; }
+
+/* Grid Layout */
+.dashboard-container { display: flex; min-height: 100vh; }
+
+.sidebar {
+    width: 280px; background-color: var(--sidebar-bg); color: var(--sidebar-text);
+    padding: 2.5rem 2rem; display: flex; flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.logo-area h2 { font-size: 1.5rem; font-family: 'Merriweather', serif; font-weight: 700; letter-spacing: -0.5px; }
+.logo-area span { color: #facc15; }
+.logo-area p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: #94a3b8; margin-top: 0.5rem; }
+
+h3.section-heading { font-family: 'Merriweather', serif; font-size: 1.25rem; font-weight: 700; color: #1e293b; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;}
+
+.filters-section { margin-top: 3rem; }
+.filters-section h3 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 1.5rem; border: none; padding:0;}
+
+.filter-group { margin-bottom: 1.5rem; }
+.filter-group label { display: block; font-size: 0.8rem; margin-bottom: 0.5rem; color: #94a3b8; font-weight:500;}
+.filter-group select {
+    width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid #1e293b;
+    background-color: #0f172a; color: white; outline: none; transition: all 0.2s; font-size:0.85rem;
+}
+.filter-group select:focus { border-color: #38bdf8; box-shadow: 0 0 0 1px #38bdf8; }
+
+.filter-actions { display: flex; gap: 0.5rem; margin-top: 2rem; }
+.btn-primary { background-color: #38bdf8; color: #0f172a; border: none; padding: 0.75rem; border-radius: var(--radius); cursor: pointer; font-weight: 600; flex: 1; transition: 0.2s; }
+.btn-primary:hover { background-color: #0ea5e9; }
+.btn-secondary { background-color: transparent; color: #94a3b8; border: 1px solid #1e293b; padding: 0.75rem; border-radius: var(--radius); cursor: pointer; transition: 0.2s; }
+.btn-secondary:hover { background-color: #1e293b; color: white;}
+
+.sidebar-footer { margin-top: auto; font-size: 0.75rem; color: #475569; }
+
+/* Main Content */
+.main-content { flex: 1; padding: 3rem 4rem; overflow-y: auto; }
+
+.top-bar { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+.top-bar h1 { font-family: 'Merriweather', serif; font-size: 2rem; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+.subtitle { color: var(--text-secondary); font-size: 1rem; }
+.date-range span { background-color: #f1f5f9; padding: 0.5rem 1rem; border-radius: var(--radius); font-size: 0.8rem; font-weight: 600; color: #475569; border: 1px solid #cbd5e1; }
+
+/* 0. Executive Summary Insights */
+.executive-summary { margin-bottom: 3.5rem; }
+.summary-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.summary-card { 
+    background: white; border: 1px solid var(--border-color); border-top-width: 4px; padding: 1.5rem; display: flex; gap: 1rem; border-radius: var(--radius); box-shadow: var(--shadow-soft);
+}
+.summary-card.ara { border-top-color: var(--ara-color); }
+.summary-card.d1 { border-top-color: var(--d1-color); }
+.summary-card.oli { border-top-color: var(--oli-color); }
+
+.summary-icon { font-size: 2rem; line-height: 1; }
+.summary-card h4 { font-family: 'Merriweather', serif; font-size: 1rem; color: var(--text-primary); margin-bottom: 0.5rem; line-height: 1.4; }
+.summary-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* 1. KPIs */
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3.5rem; }
+.kpi-card { background-color: var(--surface-color); padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border-color); display:flex; flex-direction:column; box-shadow: var(--shadow-soft); }
+.kpi-title { font-size: 0.8rem; text-transform:uppercase; letter-spacing: 0.05em; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.75rem; }
+.kpi-value { font-family: 'Merriweather', serif; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color:#0f172a;}
+.kpi-interpretation { margin-top: auto; font-size: 0.8rem; color: #16a34a; font-weight: 500; background: #f0fdf4; padding: 0.4rem; border-radius: 4px; line-height: 1.4; }
+.kpi-interpretation.neutral { color: #475569; background: #f1f5f9; }
+
+/* Dashboard Grids */
+.dashboard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4rem; }
+.chart-wrapper { display: flex; flex-direction: column; }
+.chart-wrapper.span-2 { grid-column: span 2; }
+.chart-wrapper.span-3 { grid-column: span 3; }
+
+.chart-card { background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; height: 100%; box-shadow: var(--shadow-soft); }
+
+.card-header h3 { font-size: 1rem; font-family: 'Merriweather', serif; font-weight: 700; color: #0f172a; line-height: 1.4; margin-bottom: 1rem; }
+.chart-container { position: relative; height: 260px; width: 100%; flex: 1; margin-bottom: 1rem; }
+
+/* Interpretation Blocks */
+.chart-story { background-color: #f8fafc; padding: 1rem; border-radius: var(--radius); border-left: 3px solid #cbd5e1; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-top:auto;}
+.chart-story strong { color: var(--text-primary); font-weight: 600; }
+.chart-story.large-story { font-size: 0.95rem; border: none; background: transparent; padding: 0; margin-bottom: 1rem; }
+.chart-story ul { padding-left: 1.5rem; margin: 1rem 0; }
+.chart-story li { margin-bottom: 0.5rem; }
+
+/* Flex Rows for layout */
+.flex-row { display: flex; flex-direction: row; align-items: stretch; gap: 2rem; }
+.flex-half { flex: 1; display:flex; flex-direction: column;}
+.min-h-300 { min-height: 350px; }
+
+/* NATIVE HTML HEATMAP */
+.highlight-card { border-top: 4px solid #1e293b; }
+.heatmap-container { display: flex; flex-direction: column; gap: 4px; margin-bottom: auto;}
+.heatmap-row { display: flex; align-items: center; gap: 4px; }
+.heatmap-label { width: 70px; font-size: 0.8rem; font-weight: 600; color: #475569; text-align: right; padding-right:0.5rem;}
+.heatmap-col-header { flex: 1; text-align: center; font-size: 0.75rem; font-weight: 600; color: #94a3b8; padding-bottom: 4px; }
+.cell { flex: 1; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; color: white; border-radius: 2px; }
+
+/* Heatmap Gradient Colors - McKinsey Matrix Style */
+.cell[data-val="high"] { background-color: #0f172a; } /* Darkest */
+.cell[data-val="med"] { background-color: #475569; }  /* Mid */
+.cell[data-val="low"] { background-color: #94a3b8; }  /* Lighter */
+.cell[data-val="min"] { background-color: #cbd5e1; color: #475569; } /* Lightest */
+
+/* Recomendaciones Section */
+.recommendations-section { background-color: #0f172a; border-radius: var(--radius); padding: 3rem; color: white; margin-top: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.rec-header { margin-bottom: 2.5rem; text-align: center; }
+.rec-header h2 { font-family: 'Merriweather', serif; font-size: 2rem; color: white; margin-bottom: 1rem; }
+.rec-header p { color: #94a3b8; font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.6; }
+
+.rec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.rec-item { background-color: #1e293b; padding: 2rem; border-radius: var(--radius); border-top: 3px solid #f43f5e; position: relative; }
+.rec-num { position: absolute; top: -15px; left: 20px; background: #f43f5e; color: white; font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.2rem; padding: 0.2rem 0.8rem; border-radius: 4px; }
+.rec-item h3 { font-size: 1.15rem; color: white; margin-bottom: 1rem; padding-top: 0.5rem; }
+.rec-item p { font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; }
+.rec-item strong { color: #f8fafc; }
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+    .chart-wrapper.span-3 { grid-column: span 2; }
+    .flex-row { flex-direction: column; }
+    .summary-cards { grid-template-columns: 1fr; }
+    .rec-grid { grid-template-columns: 1fr; }
+}
