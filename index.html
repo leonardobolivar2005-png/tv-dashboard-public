@@ -17,6 +17,9 @@
         .section-separator { margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
         .section-separator h2 { font-family: 'Merriweather', serif; color: #0f172a; font-size: 1.5rem; }
         .final-insight { background-color: #0f172a; color: white; text-align: center; padding: 2rem; border-radius: 4px; margin-top: 3rem; font-family: 'Merriweather', serif; font-size: 1.5rem;}
+        .insights-ul { list-style-type: none; padding-left: 0; }
+        .insights-ul li { margin-bottom: 0.8rem; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 0.5rem;}
+        .insights-ul li::before { content: "•"; color: #0284c7; font-weight: bold; font-size: 1.2rem; line-height: 1;}
     </style>
 </head>
 <body>
@@ -65,167 +68,175 @@
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <header class="top-bar" style="margin-bottom: 1rem;">
+            <!-- 🔴 CAMBIO 1 — HEADER PRINCIPAL -->
+            <header class="top-bar" style="margin-bottom: 2rem;">
                 <div>
-                    <h1>Análisis de Pauta en TV</h1>
-                    <p class="subtitle">Evaluación estratégica de ARA, D1 y Olímpica.</p>
+                    <!-- REEMPLAZAR TÍTULO -->
+                    <h1>Tres estrategias en TV: ARA (volumen), D1 (eficiencia) y Olímpica (segmentación)</h1>
+                    <!-- AGREGAR SUBTÍTULO -->
+                    <p class="subtitle" style="font-size: 1.1rem; margin-top:0.5rem;">Análisis 360 de frecuencia, inversión y alcance en retail colombiano</p>
                 </div>
             </header>
 
-            <!-- 1. OVERVIEW -->
-            <div class="section-separator" style="margin-top:0;">
-                <h2>Ausencia de simetría en el mercado: ARA lidera en volumen, D1 en eficiencia y Olímpica en segmentación</h2>
-            </div>
-            
-            <!-- Resumen Overview Superior -->
-            <section class="executive-summary" style="margin-bottom: 1.5rem;">
+            <!-- 🔴 CAMBIO 2 — BLOQUE NUEVO ARRIBA -->
+            <section class="executive-summary" style="margin-bottom: 2rem;">
+                <h2 style="font-family: 'Merriweather', serif; font-size: 1.4rem; color: #0f172a; margin-bottom: 1rem;">🧠 Insights clave del mercado</h2>
                 <div class="summary-cards" style="grid-template-columns: 1fr; background: #e0f2fe; padding: 1.5rem; border-left: 4px solid #0284c7; border-radius: 4px;">
-                    <p style="margin-bottom: 0.5rem; font-size: 0.95rem;"><strong>Insight:</strong> La industria de pauta en retail no presenta un líder absoluto. ARA acapara la cuota de ruido (frecuencia), D1 monopoliza el control del CPA (Costo por Adquisición) y Olímpica capitaliza el alcance selectivo.</p>
-                    <p style="margin-bottom: 0.5rem; font-size: 0.95rem;"><strong>Interpretación:</strong> Los competidores han evitado una guerra frontal, atrincherándose en lógicas operativas excluyentes que maximizan sus presupuestos bajo métricas diametralmente distintas.</p>
-                    <p style="font-size: 0.95rem;"><strong>Implicación Estratégica:</strong> Para arrebatar cuota de mercado, las marcas deben abandonar su zona de confort bidimensional y evolucionar hacia estrategias híbridas que intercepten las fortalezas del competidor.</p>
+                    <ul class="insights-ul">
+                        <li>ARA concentra la mayor frecuencia → estrategia basada en repetición intensiva</li>
+                        <li>D1 optimiza la inversión → mayor eficiencia costo-impacto</li>
+                        <li>Olímpica reduce volumen → enfoque en segmentación</li>
+                        <li>El mercado no tiene un líder único, sino estrategias diferenciadas</li>
+                    </ul>
                 </div>
             </section>
             
+            <!-- 🔴 CAMBIO 8 — KPI CARDS CON TEXTO INTERPRETATIVO -->
             <section class="overview-section" id="overview">
                 <div class="kpi-grid">
                     <div class="kpi-card">
                         <p class="kpi-title">Total de Spots por Marca</p>
                         <h2 class="kpi-value" id="kpi-spots">--</h2>
                         <div class="kpi-insight-row">
-                            <span class="kpi-trend-badge">+14% vs Q1</span>
-                            <span class="kpi-interpretation" style="margin:0;">Líder absoluto de cuota: ARA</span>
+                            <span class="kpi-interpretation" style="margin:0; width:100%; text-align:center;">Volumen superior en el histórico del panel</span>
                         </div>
                     </div>
                     <div class="kpi-card">
                         <p class="kpi-title">Frecuencia Promedio</p>
                         <h2 class="kpi-value" id="kpi-freq">--</h2>
                         <div class="kpi-insight-row">
-                            <span class="kpi-trend-badge negative">+2 rep</span>
-                            <span class="kpi-interpretation" style="margin:0;">Peligro de Fatiga (ARA)</span>
+                            <!-- TEXTO EXACTO DE EJEMPLO DEL USUARIO -->
+                            <span class="kpi-interpretation negative" style="margin:0; width:100%; text-align:center;">Alta presión publicitaria vs competencia</span>
                         </div>
                     </div>
                     <div class="kpi-card">
                         <p class="kpi-title">Inversión Estimada</p>
                         <h2 class="kpi-value" id="kpi-investment">--</h2>
                         <div class="kpi-insight-row">
-                            <span class="kpi-trend-badge">-3% vs Q1</span>
-                            <span class="kpi-interpretation" style="margin:0;">Control y Eficiencia: D1</span>
+                            <span class="kpi-interpretation" style="margin:0; width:100%; text-align:center;">Concentración de capital eficiente frente a emisión</span>
                         </div>
                     </div>
                     <div class="kpi-card">
                         <p class="kpi-title">Alcance Estimado</p>
                         <h2 class="kpi-value" id="kpi-reach">--</h2>
                         <div class="kpi-insight-row">
-                            <span class="kpi-trend-badge">+8% vs Q1</span>
-                            <span class="kpi-interpretation" style="margin:0;">Penetración Efectiva: Olímpica</span>
+                            <span class="kpi-interpretation" style="margin:0; width:100%; text-align:center;">Penetración dirigida hacia franjas de nicho</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 2. Frecuencia ARA -->
-            <div class="section-separator"><h2>La extrema concentración de repeticiones en ARA evidencia un alto riesgo de fatiga publicitaria</h2></div>
-            <div class="dashboard-grid" style="margin-bottom:2rem;">
+            <!-- 🔴 CAMBIO 3 — GRÁFICO DE FRECUENCIA (ARA) -->
+            <div class="dashboard-grid" style="margin-bottom:2rem; margin-top:2rem;">
                 <div class="chart-wrapper span-2">
                     <div class="chart-card">
+                        <div class="card-header">
+                            <h3>ARA domina en presión publicitaria, pero presenta riesgo de saturación</h3>
+                        </div>
                         <div class="chart-container">
                             <canvas id="freqDistributionChart"></canvas>
                         </div>
                         <div class="chart-story">
-                            <h4>Insight</h4>
-                            <p>ARA concentra la mayor cantidad de impactos acumulados (superando los 20 spots por ciclo) reincidiendo sobre su público histórico.</p>
-                            <h4>Interpretación</h4>
-                            <p>La marca prioriza una táctica rudimentaria de "arrastre por repetición", la cual genera recordación momentánea pero sacrifica drásticamente el retorno marginal por emisión.</p>
-                            <h4>Implicación Estratégica</h4>
-                            <p>Mantener este modelo estéril continuará canibalizando la inversión. Es imperativo des-saturar este bloque de frecuencia ineficaz para liberar flujo de caja.</p>
+                            <h4>Insight:</h4>
+                            <p>ARA concentra la mayor cantidad de impactos por referencia.</p>
+                            <h4>Interpretación:</h4>
+                            <p>La marca repite anuncios sobre la misma audiencia para aumentar recordación.</p>
+                            <h4>Implicación:</h4>
+                            <p>Se genera saturación, lo que reduce la eficiencia del alcance.</p>
                         </div>
                     </div>
                 </div>
-                <!-- Barras (top referencias) -->
+                <!-- Barras complementarias para rellenar grid (mantiene formato McKinsey) -->
                 <div class="chart-wrapper">
                     <div class="chart-card">
+                        <div class="card-header">
+                            <h3>Priorización extrema en referencias canasta e imanes tácticos</h3>
+                        </div>
                         <div class="chart-container">
                             <canvas id="topBrandsAraChart"></canvas>
                         </div>
                         <div class="chart-story">
-                            <h4>Insight</h4>
-                            <p>Anclaje excesivo sobre cárnicos y urgencia transaccional.</p>
-                            <h4>Interpretación</h4>
-                            <p>El *Top 10* de referencias muestra que ARA fuerza el tráfico sin generar atributos residuales.</p>
-                            <h4>Implicación Estratégica</h4>
-                            <p>El uso único de ofertas *Hard Discount* en altísima penetración deteriora la calidad del perfil del producto a largo plazo.</p>
+                            <h4>Insight:</h4>
+                            <p>Frecuencia volcada hacia categorías promocionales.</p>
+                            <h4>Interpretación:</h4>
+                            <p>Estimula visitas de corto plazo descuidando atributos globales de marca madre.</p>
+                            <h4>Implicación:</h4>
+                            <p>Obliga a la marca a competir exclusivamente nivel precio, anulando lealtad.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 3. Inversión D1 -->
-            <div class="section-separator"><h2>D1 pulveriza la escala de costos tácticos asegurando la mayor rentabilidad transaccional del segmento</h2></div>
-            <div class="dashboard-grid" style="margin-bottom:2rem;">
-                <!-- Scatter (Costo vs Impacto) -->
-                <div class="chart-wrapper">
-                    <div class="chart-card">
-                        <div class="chart-container">
-                            <canvas id="costImpactD1Chart"></canvas>
-                        </div>
-                        <div class="chart-story">
-                            <h4>Insight</h4>
-                            <p>El scatter plot refleja un clúster inferior denso: D1 exprime la relación Costo vs Impacto.</p>
-                            <h4>Interpretación</h4>
-                            <p>Koba (D1) administra un presupuesto implacablemente austero, multiplicando las ráfagas de visibilidad al menor precio del mercado (TRP optimizado).</p>
-                            <h4>Implicación Estratégica</h4>
-                            <p>Esta agilidad financiera le permite a D1 estar omnipresente en el imaginario sin desangrar el P&L, algo que ARA debería emular imperativamente.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Inversión por Duración de Spot -->
-                <div class="chart-wrapper span-2">
-                    <div class="chart-card">
-                        <div class="chart-container">
-                            <canvas id="investmentChart"></canvas>
-                        </div>
-                        <div class="chart-story">
-                            <h4>Insight</h4>
-                            <p>D1 bloquea sistemáticamente la contratación de franjas extendiendo pautas cortas de 20s.</p>
-                            <h4>Interpretación</h4>
-                            <p>Sacrifican longitud argumentativa e inyectan toda la pauta en duraciones comprimidas dentro del Prime Time.</p>
-                            <h4>Implicación Estratégica</h4>
-                            <p>El *Prime Time* rinde conversiones sólidas solo si el formato es veloz. Un formato de 30s asfixia las operaciones de marketing en estos horarios.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Alcance Olímpica -->
-            <div class="section-separator"><h2>Olímpica margina el volumen a favor de una penetración de nicho hiper-efectiva</h2></div>
+            <!-- 🔴 CAMBIO 4 — GRÁFICO DE INVERSIÓN (D1) -->
             <div class="dashboard-grid" style="margin-bottom:2rem;">
                 <div class="chart-wrapper span-3">
                     <div class="chart-card">
+                        <div class="card-header">
+                            <h3>D1 logra mayor eficiencia publicitaria con menor inversión relativa</h3>
+                        </div>
+                        <div class="chart-container" style="height:320px;">
+                            <canvas id="costImpactD1Chart"></canvas>
+                        </div>
+                        <div class="chart-story" style="display:flex; flex-direction:row; gap: 2rem;">
+                            <div style="flex:1;">
+                                <h4>Insight:</h4>
+                                <p>D1 presenta mejor relación costo-impacto frente a la competencia.</p>
+                            </div>
+                            <div style="flex:1;">
+                                <h4>Interpretación:</h4>
+                                <p>Optimiza el uso del presupuesto en TV.</p>
+                            </div>
+                            <div style="flex:1;">
+                                <h4>Implicación:</h4>
+                                <p>Logra mayor retorno sin necesidad de alta frecuencia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🔴 CAMBIO 5 — GRÁFICO DE ALCANCE (OLÍMPICA) -->
+            <div class="dashboard-grid" style="margin-bottom:2rem;">
+                <div class="chart-wrapper span-3">
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3>Olímpica prioriza segmentación sobre volumen de exposición</h3>
+                        </div>
                         <div class="chart-container">
                             <canvas id="reachOlimpicaChart"></canvas>
                         </div>
                         <div class="chart-story" style="display:flex; flex-direction:row; gap: 2rem;">
                             <div style="flex:1;">
-                                <h4>Insight</h4>
-                                <p>Pese a poseer la cuota de repetición más baja del estudio, Olímpica logra picos formidables de cobertura bruta.</p>
+                                <h4>Insight:</h4>
+                                <p>Menor número de impactos pero mejor focalización.</p>
                             </div>
                             <div style="flex:1;">
-                                <h4>Interpretación</h4>
-                                <p>La estrategia renuncia deliberadamente al desgaste del Day-Time para apostar fuertes sumas en la compra concentrada de eventos nacionales.</p>
+                                <h4>Interpretación:</h4>
+                                <p>Se enfoca en públicos específicos en lugar de masividad.</p>
                             </div>
                             <div style="flex:1;">
-                                <h4>Implicación Estratégica</h4>
-                                <p>Esta precisión francotiradora genera mayor impacto real (casos) con un esfuerzo ínfimo, garantizando conversiones seguras.</p>
+                                <h4>Implicación:</h4>
+                                <p>Reduce presión publicitaria pero mejora precisión del mensaje.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 5. Comparación Estratégica -->
-            <div class="section-separator"><h2>La divergencia de los vectores prueba que ninguna marca ha logrado la omnicanalidad</h2></div>
+            <!-- 🔴 CAMBIO 6 — SECCIÓN COMPARATIVA -->
+            <div class="section-separator" style="margin-top: 3rem;">
+                <h2>⚖️ Comparación estratégica del mercado</h2>
+            </div>
+            <div class="executive-summary" style="margin-bottom: 2rem; background: #f8fafc; padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 4px;">
+                <p style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; text-align: center; max-width: 800px; margin: 0 auto;">
+                    <strong>El mercado de retail en TV se divide en tres enfoques claros:</strong><br>
+                    ARA lidera en volumen, D1 en eficiencia y Olímpica en segmentación.<br>
+                    Esto evidencia que no existe una única estrategia dominante, sino ventajas competitivas distintas.
+                </p>
+            </div>
+            
             <div class="dashboard-grid">
-                <!-- Heatmap matricial -->
+                <!-- Visuales comparativos para ilustrar el texto anterior -->
                 <div class="chart-wrapper span-2">
                     <div class="chart-card heatmap-card highlight-card">
                         <div class="card-header">
@@ -242,45 +253,35 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="chart-wrapper span-3">
-                     <div class="chart-story large-story">
-                        <h4>Insight Central</h4>
-                        <p>ARA es prisionera del volumen; D1 defiende implacablemente su eficiencia; Olímpica asume la base piramidal de cobertura.</p>
-                        <h4>Interpretación Dinámica</h4>
-                        <p>El cruce del Radar y Heatmap revela que los presupuestos están actuando como compartimentos estancos sin polinizarse entre marcas.</p>
-                        <h4>Implicación Definitiva</h4>
-                        <p>El competidor que primero logre combinar dos fortalezas cruzadas (Ej. ARA sumando eficiencia de TRP a su frecuencia bruta actual) forzará un exterminio presupuestal a la competencia.</p>
-                    </div>
-                </div>
-            </div> <!-- End Grid -->
-
-            <!-- SECCIÓN 6: RECOMENDACIONES ARA -->
-            <section class="recommendations-section">
+            <!-- 🔴 CAMBIO 7 — SECCIÓN FINAL (OBLIGATORIA) -->
+            <section class="recommendations-section" style="margin-top: 3rem;">
                 <div class="rec-header">
-                    <h2 style="font-family:'Merriweather',serif; color:#fff; margin-bottom:1rem; font-size:1.8rem;">Recomendaciones Tácticas (Playbook para ARA)</h2>
+                    <h2 style="font-family:'Merriweather',serif; color:#fff; margin-bottom:1rem; font-size:1.8rem;">🎯 Recomendaciones estratégicas para ARA</h2>
                 </div>
                 
                 <div class="rec-grid">
                     <div class="rec-item">
                         <div class="rec-num">1</div>
-                        <h3>Optimización del Alcance Marginal (Des-saturar)</h3>
-                        <p><strong>Qué hacer:</strong> Identificar y amputar toda la pauta estacionaria que supere el umbral crítico de 15 exposiciones para redistribuir ese margen hacia canales satélites de reclutamiento.<br><br>
-                        <strong>Por qué:</strong> Pagar por impactar a la misma persona 21 veces seguidas genera resistencia orgánica (Ad-fatigue). La compra de audiencias vírgenes es perentoria.</p>
+                        <h3>Mejora de alcance</h3>
+                        <p>Reducir la frecuencia excesiva y redistribuir la pauta hacia nuevas audiencias.<br>
+                        Esto permitirá aumentar cobertura sin incrementar significativamente la inversión.</p>
                     </div>
 
                     <div class="rec-item">
                         <div class="rec-num">2</div>
-                        <h3>Priorización de Referencias Ancla</h3>
-                        <p><strong>Qué hacer:</strong> Limpiar la parrilla publicitaria de ofertas volátiles y volcar la artillería en promocionar los pilares basales (Leche, Carnes, Arroz).<br><br>
-                        <strong>Por qué:</strong> El producto esencial amarra la frecuencia del hogar al local. El *cross-selling* de promociones adicionales ocurrirá automáticamente al ingresar al local, sin requerir CPA de televisión.</p>
+                        <h3>Priorización de productos</h3>
+                        <p>Enfocar la pauta en productos básicos como leche, carne y arroz.<br>
+                        Esto mejora la conversión al centrarse en la canasta esencial del consumidor.</p>
                     </div>
 
                     <div class="rec-item">
                         <div class="rec-num">3</div>
-                        <h3>Corrección Táctica de Duración (70/30)</h3>
-                        <p><strong>Qué hacer:</strong> Adoptar agresivamente un *split* de inversión: 70% en spots estroboscópicos (10s) y sólo 30% en creatividades narrativas (20-30s).<br><br>
-                        <strong>Por qué:</strong> El lote masivo del 70% permitirá recordación constante hiper-barata mimetizando a D1, blindando el porcentaje minoritario para afianzar retención de fidelidad.</p>
+                        <h3>Estrategia de duración</h3>
+                        <p>Implementar un mix de formatos:<br>
+                        70% comerciales de 10 segundos y 30% de 20–30 segundos.<br>
+                        Esto equilibra frecuencia y recordación del mensaje.</p>
                     </div>
                 </div>
             </section>
